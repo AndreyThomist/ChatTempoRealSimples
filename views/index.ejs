@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../assets/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/normalize.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/76669b3f7c.js"></script>
+    <title><%= title %></title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="chat">
+            <div class='header'>
+                <h2 class="text-center">Chat</h2>
+            </div>
+            <div class="chat-area">
+                <div class="message">
+                    <p class="author">Andrey</p>
+                    <blockquote class="balloon">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam dolorem tempore corrupti minus
+                        qui saepe? Ut harum in consequatur voluptatum quas rerum sequi repellat quia culpa illo
+                        molestiae, voluptatibus blanditiis.
+                    </blockquote>
+                </div>
+            </div>
+            <div class="form">
+                <input type="text" placeholder="usuário" class="form">
+                <input type="text" placeholder="o que você está pensando?" class="form">
+                <button class="button">Enviar</button>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        let socket = io();
+    </script>
+</body>
+
+</html>

@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/AndreyThomist/ChatTempoRealSimples/issues"
   },
-  "homepage": "https://github.com/AndreyThomist/ChatTempoRealSimples#readme"
+  "homepage": "https://github.com/AndreyThomist/ChatTempoRealSimples#readme",
+  "devDependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2",
+    "socket.io": "^2.3.0"
+  }
 }
