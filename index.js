@@ -8,8 +8,10 @@ let io = require('socket.io')(http);
 
 app.use('/assets', express.static('assets'))
 
-io.on('connection', function(socket){
-    console.log(socket);
+io.on('connection', (socket) => {
+    socket.on('sendMessage',(data) => {
+        io.emit('sendMessage',data);
+    })
 });
 
 app.get('/',(req,res,next) => {
@@ -21,4 +23,6 @@ app.get('/',(req,res,next) => {
 
 
 
-app.listen(3000)
+http.listen(3000, function(){
+    
+});

@@ -15,21 +15,14 @@
     <div class="container">
         <div class="chat">
             <div class='header'>
-                <h2 class="text-center">Chat</h2>
+                <h2>Chat</h2>
             </div>
             <div class="chat-area">
-                <div class="message">
-                    <p class="author">Andrey</p>
-                    <blockquote class="balloon">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam dolorem tempore corrupti minus
-                        qui saepe? Ut harum in consequatur voluptatum quas rerum sequi repellat quia culpa illo
-                        molestiae, voluptatibus blanditiis.
-                    </blockquote>
-                </div>
+               
             </div>
             <div class="form">
-                <input type="text" placeholder="usuário" class="form">
-                <input type="text" placeholder="o que você está pensando?" class="form">
+                <input type="text" placeholder="usuário" id="usuario" class="form">
+                <input type="text" id="message" placeholder="o que você está pensando?" class="form">
                 <button class="button">Enviar</button>
             </div>
         </div>
@@ -37,6 +30,24 @@
     <script src="/socket.io/socket.io.js"></script>
     <script>
         let socket = io();
+        document.querySelector('.button').addEventListener('click', (e) => {
+            console.log('entrou')
+            let usuario = document.querySelector('#usuario');
+            let message = document.querySelector('#message');
+            socket.emit('sendMessage', {
+                usuario: usuario.value,
+                message: message.value
+            });
+        });
+        socket.on('sendMessage', (data) => {
+            let message = document.createElement('div');
+            message.className = "message";
+            message.innerHTML = `
+            <div class="message"><span class="author">${data.usuario}:</span> ${data.message} </div>
+            `
+            console.log(message)
+            document.querySelector('.chat-area').appendChild(message)
+        })
     </script>
 </body>
 

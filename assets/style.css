@@ -1,6 +1,5 @@
 html {
     box-sizing: border-box;
-    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 .text-center {
@@ -27,9 +26,10 @@ html {
 
 .chat {
     border-radius: 3px;
-    width: 50%;
+    width: 40%;
     border: 0.7px solid #ccc;
 }
+
 
 .form {
     display: flex;
@@ -55,17 +55,20 @@ input:nth-child(2) {
 }
 
 .chat-area {
+    margin: 0;
+    height:250px;
+    margin-left: 5px;
+    overflow-y: scroll;
     background-color: white;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     margin-bottom: 50px;
 }
 
 .message{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 15px;
 }
 
 .balloon {
@@ -80,6 +83,16 @@ input:nth-child(2) {
     border-radius: 5px;
 }
 
+.header{
+    margin: 0;
+    display: flex;
+    color: white;
+    height:50px;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d80d9;
+}
+
 .button {
     flex: 1;
     background-color: #4287f5;
@@ -88,6 +101,8 @@ input:nth-child(2) {
     border-radius: 4px;
 }
 
+
+
 .author{
-    margin-left: 20px;
+    font-weight: 900;
 }
