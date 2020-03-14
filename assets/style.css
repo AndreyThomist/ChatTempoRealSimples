@@ -35,6 +35,12 @@ html {
     display: flex;
 }
 
+@media(max-width:1100px){
+    .form{
+        flex-direction: column;
+    }   
+}
+
 input[type="text"] {
     flex: 1;
     margin: 2px;
@@ -83,6 +89,7 @@ input:nth-child(2) {
     border-radius: 5px;
 }
 
+
 .header{
     margin: 0;
     display: flex;
@@ -101,7 +108,11 @@ input:nth-child(2) {
     border-radius: 4px;
 }
 
-
+.date{
+    margin-left: 20px;
+    display:inline-block;
+    color:#606d82;
+}
 
 .author{
     font-weight: 900;

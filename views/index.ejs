@@ -36,14 +36,15 @@
             let message = document.querySelector('#message');
             socket.emit('sendMessage', {
                 usuario: usuario.value,
-                message: message.value
+                message: message.value,
+                date:new Date().toLocaleString()
             });
         });
         socket.on('sendMessage', (data) => {
             let message = document.createElement('div');
             message.className = "message";
             message.innerHTML = `
-            <div class="message"><span class="author">${data.usuario}:</span> ${data.message} </div>
+            <div class="message"><span class="author">${data.usuario}</span><small class="date">${data.date}</small> <p>${data.message}</p> </div>
             `
             console.log(message)
             document.querySelector('.chat-area').appendChild(message)
