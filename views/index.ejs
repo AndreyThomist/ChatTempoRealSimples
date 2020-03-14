@@ -18,19 +18,20 @@
                 <h2>Chat</h2>
             </div>
             <div class="chat-area">
-               
+                
             </div>
-            <div class="form">
-                <input type="text" placeholder="usuário" id="usuario" class="form">
-                <input type="text" id="message" placeholder="o que você está pensando?" class="form">
-                <button class="button">Enviar</button>
+            <form class="form">
+                <input type="text" required placeholder="usuário" id="usuario" class="form">
+                <input type="text" required id="message" placeholder="o que você está pensando?" class="form">
+                <button type="submit" class="button">Enviar</button>
             </div>
         </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script>
         let socket = io();
-        document.querySelector('.button').addEventListener('click', (e) => {
+        document.querySelector('.form').addEventListener('submit', (e) => {
+            e.preventDefault();
             console.log('entrou')
             let usuario = document.querySelector('#usuario');
             let message = document.querySelector('#message');
